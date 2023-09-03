@@ -13,7 +13,14 @@ public class Main {
               System.out.println("hello:-"+ "i:-"+i+ "  j:-" + j);
           }
       }
+//*********************************************************************//
 
+
+        int m=sc.nextInt();
+        for(int i=0;i<n;i=i*2) {
+            System.out.println("i:- " + i);
+          //  find time complexity
+        }
 
     }
 }
