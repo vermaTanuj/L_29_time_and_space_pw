@@ -9,6 +9,7 @@ public class TCS_Digital {
    //find no do 2whealers and 4 whealers;
 
         brootforse(200,540);
+        foor(200,540);
     }
     public static void brootforse (int vehicle,int wheels) {
         int tw = 0;
@@ -24,5 +25,16 @@ public class TCS_Digital {
             tw++;
         }
 
+    }
+
+    //using for loop:-
+    public static void foor (int vehicle,int wheels) {
+        for(int i=0;i<=vehicle;i++){
+            int fw=vehicle-i;
+            if(i*2+fw*4==wheels){
+                System.out.println("no of 2whelers:-" + i);
+                System.out.println("no of 4whelers:-" + fw);
+            }
+        }
     }
 }
