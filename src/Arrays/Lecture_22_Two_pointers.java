@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class Lecture_22_Two_pointers {
     public static void main(String[] args) {
 
-<<<<<<< HEAD
+
         //sort Arrar{1,0,0,1,0,1,1,0,0};
         int a[]={1,0,0,1,0,1,1,0,0,0,0};
         sort(a);
@@ -14,30 +14,29 @@ public class Lecture_22_Two_pointers {
      //   sort_2(a);
         int b[]={1,0,1,0,1,0};
         sort_2(b);
-=======
+
         //sort
         //Arrar{1,0,0,1,0,1,1,0,0};
-        int a[]={1,0,0,1,0,1,1,0,0,0,0};
+      //  int a[]={1,0,0,1,0,1,1,0,0,0,0};
         //sort(a);
         //sort_1(a);
         //using 2 pointer aproch
      //   sort_2(a);
-        int b[]={1,0,1,0,1,0};
-      //  sort_2(b);
->>>>>>> origin/main
+        int bd[]={1,0,1,0,1,0};
+      //  sort_2(bd);
+
 
         //given a array put all even no in begining and all odd no at the end;
         int []arr={-600,-100,1,2,3,4,5,6,7,8,9,10};
         System.out.println("kk"+Arrays.toString(arr));
-<<<<<<< HEAD
+
        even_odd(arr);
 
        //Assending array ;-
         //return a array:with squares of element in assending order:-
-=======
+
       // even_odd(arr);
 
->>>>>>> origin/main
 assend_sq(arr);
 
 
@@ -152,14 +151,12 @@ assend_sq(arr);
     }
 
 
-<<<<<<< HEAD
+
 
 
     //Assending array ;-
     //return a array:with squares of element in assending order:-
 
-=======
->>>>>>> origin/main
     public static void assend_sq(int a[]){
 
         //Squaring;-
