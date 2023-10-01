@@ -1,5 +1,7 @@
 package Array_2D;
 
+import java.util.Scanner;
+
 public class Lecture_25_Matrix_Transpose_and_Rotate__Pascle_Triangle {
     public static void main(String[] args) {
 
@@ -26,6 +28,12 @@ public class Lecture_25_Matrix_Transpose_and_Rotate__Pascle_Triangle {
         a1.print(a);
         System.out.println("rotated array by 90 digree:-");
        a1.print( a1.rotate_90(a));
+
+       //Pascle Triangle:-
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Pascle Triangle upto:-");
+        int n=sc.nextInt();
+        a1.print(a1.pascleTriangle(n));
 
     }
 }
@@ -64,11 +72,12 @@ class methods{
         2 :- reverse each of the array of tranposed matrix
        */
     public int [][] rotate_90(int a[][]){
-        int [][] b=transpose(a,3,3);  //method written earlier 3,3 to fulfil the parameters
+        //transpose:-
+        tra(a);
 
-        //printing the transpose array:-
+     //   printing the transpose array:-
         System.out.println("the transpose array:-");
-        print(b);
+        print(a);
         System.out.println();
 
         //reversing each array;-
@@ -79,9 +88,20 @@ class methods{
 
         return a;
     }
+    //transpose of  array helper method for rotate 90:-
+    public void tra(int a[][]){
+        for(int i=0;i<a.length;i++){
+            for(int j=i;j<a.length;j++){
+                //swaping:-
+                int t=a[i][j];
+                a[i][j]=a[j][i];
+                a[j][i]=t;
+            }
+        }
+    }
 
     //reversing the array in place:-
-    public int [] rev(int a[]){
+    public void rev(int a[]){
         int i=0;
         int j=a.length-1;
         while(i<j){
@@ -90,7 +110,30 @@ class methods{
             a[j]=t;
             i++;j--;
         }
-        return a;
+
+    }
+
+    //pascle triangle:-
+    /*
+    roles:-
+    1. every element is sum of previous 2 elements;  pasc[i][j]=pasc[i-1][j]+pasc[i-1][j-1];
+    2. first and last element is always 1;
+    3. it is jagged arrays;
+     */
+    public int [][] pascleTriangle(int n){
+        int [][]pasc=new int [n][];
+
+        //
+        for(int i=0;i<n;i++){
+            //it is jagged array so to create column at ren time:-
+            pasc[i]=new int [i+1];           //it is jagged arrays; no of collumn in every row is  one more than row 0:-1,2:-2,2:-3
+            pasc[i][0]=1;pasc[i][i]=1;       //first and last element is always 1;
+            //sum:-
+            for(int j=1;j<i;j++){
+                pasc[i][j]=pasc[i-1][j]+pasc[i-1][j-1];
+            }
+        }
+        return pasc;
     }
 
 
