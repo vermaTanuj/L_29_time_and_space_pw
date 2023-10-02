@@ -127,7 +127,10 @@ class methods{
         for(int i=0;i<n;i++){
             //it is jagged array so to create column at ren time:-
             pasc[i]=new int [i+1];           //it is jagged arrays; no of collumn in every row is  one more than row 0:-1,2:-2,2:-3
-            pasc[i][0]=1;pasc[i][i]=1;       //first and last element is always 1;
+
+            pasc[i][0]=1;
+            pasc[i][i]=1;       //first and last element is always 1;
+
             //sum:-
             for(int j=1;j<i;j++){
                 pasc[i][j]=pasc[i-1][j]+pasc[i-1][j-1];

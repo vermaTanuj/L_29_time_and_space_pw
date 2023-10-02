@@ -21,6 +21,12 @@ public class Lecture_26_Spiral_Matrix {
         m1.print(b);
        m1.print_Spiral_Matrix(b,4,3);
 
+       //Generating spiral matrix:-
+        //value putting in spiral:-
+        System.out.println();
+        System.out.println("Generating spiral matrix:-");
+          m1.print(m1.generatingSpiralMatrix(4));
+
     }
 }
  class method{
@@ -71,6 +77,46 @@ public class Lecture_26_Spiral_Matrix {
 
      }
 
+
+     public int [][] generatingSpiralMatrix(int n){
+         int tr=0,br=n-1,rc=n-1,lc=0;
+         int v=0;                     //value
+
+         //new array:=-
+         int ans[][]=new int [n][n];
+
+         while(v<n*n){
+
+             // tr= lc to rc
+             for(int j=lc;j<=rc;j++){
+                  ans[tr][j]=v++;
+             }
+             tr++;
+
+             //rc=tr to br
+             for(int i=tr;i<=br;i++){
+                 ans[i][rc]=v++;
+             }
+             rc--;
+
+             //br= rc to lc
+             for(int j=rc;j>=lc;j--){
+                 ans[br][j]=v++;
+             }
+             br--;
+
+             //lc=br to tr
+             for(int i=br;i>=tr;i--){
+                 ans[i][lc]=v++;
+             }
+             lc++;
+
+
+         }
+         return ans;
+
+     }
+
     public  void print(int a[][]){
         // System.out.println("Printing array :-");
         for(int i=0;i<a.length;i++){
@@ -81,3 +127,37 @@ public class Lecture_26_Spiral_Matrix {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
