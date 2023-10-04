@@ -26,7 +26,16 @@ public class Lecture_26_Spiral_Matrix {
         System.out.println();
         System.out.println("Generating spiral matrix:-");
           m1.print(m1.generatingSpiralMatrix(4));
+          
+          //printing matrix spirally in antiClock direction:-
+        System.out.println("Original matrix:-");
+        m1.print(a);
+        System.out.println("printing matrix spirally in antiClock direction:-");
+     m1.spiralAntyClockMatrixPrinting(a,5,5);
 
+        System.out.println("Original matrix:-");
+        m1.print(b);
+        m1.spiralAntyClockMatrixPrinting(b,4,3);
     }
 }
  class method{
@@ -114,6 +123,47 @@ public class Lecture_26_Spiral_Matrix {
 
          }
          return ans;
+
+     }
+     
+     // //printing matrix spirally in antiClock direction:-
+     public void spiralAntyClockMatrixPrinting(int a[][],int r,int c){
+         int tr=0,br=r-1,rc=c-1,lc=0;
+         int te=0;
+
+         while(te<r*c){
+
+             //lc=tr to br
+             for(int i=tr;i<=br&&te<r*c;i++){
+
+                     System.out.print(a[i][lc] + " ");
+                 te++;
+             }
+             lc++;
+             //br=lc to rc
+             for(int j=lc;j<=rc&&te<r*c;j++){
+
+                     System.out.print(a[br][j] + " ");
+                 te++;
+             }
+             br--;
+             //rc=br to tr
+             for(int i=br;i>=tr&&te<r*c;i--){
+
+                     System.out.print(a[i][rc] + " ");
+                 te++;
+             }
+             rc--;
+
+             // tr=rc to lc
+             for(int j=rc;j>=lc&&te<r*c;j--){
+
+                     System.out.print(a[tr][j] + " ");
+                 te++;
+             }
+             tr++;
+         }
+
 
      }
 
