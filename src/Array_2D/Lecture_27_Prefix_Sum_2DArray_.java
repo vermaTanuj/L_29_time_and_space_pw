@@ -4,16 +4,54 @@ public class Lecture_27_Prefix_Sum_2DArray_ {
     public static void main(String[] args) {
         int[][] a = {
                 {1, 1, 1, 1, 1, 1, 1},
-                {1, 1, 1, 1, 1, 1, 1},
-                {1, 1, 1, 1, 1, 1, 1},
-                {1, 1, 1, 1, 1, 1, 1},
-                {1, 1, 1, 1, 1, 1, 1},
-                {1, 1, 1, 1, 1, 1, 1},
-                {1, 1, 1, 1, 1, 1, 1}
+                {2,2,2,2,2,2,2},
+                {3,3,3,3,3,3,3},
+                {4,4,4,4,4,4,4},
+                {5,5,5,5,5,5,5},
+                {6,6,6,6,6,6,6},
+                {7,7,7,7,7,7,7}
         };
 
-        System.out.println(sum(a,3,1,5,4));
+        print(a);
+
+       // System.out.println(sum(a,3,1,5,4));
+
+        System.out.println( "Sum of scope variables :-  "+preSumScope(a,01,2,1,2));
     }
+
+    //prefix Sum inplace:-
+    public static void pre_sum(int a[]){
+        for(int i=1;i<a.length;i++){
+            a[i]=a[i]+a[i-1];
+        }
+    }
+
+    //prefix sum scope:-
+    public static int preSumScope(int a[][],int l1,int l2,int r1,int r2){
+        int sum=0;
+        //finding prefix sum of every individual array:-
+      for(int i=0;i<a.length;i++){
+          pre_sum(a[i]);
+      }
+
+      //finding sum wethin scope:-
+        for(int i=l1;i<=l2;i++){
+             if(r1>0) {
+                 sum += a[i][r2] - a[i][r1 - 1];
+             }
+            else{
+                sum+=a[i][r2];
+             }
+        }
+
+
+        return sum;
+    }
+
+
+
+    //broot force:-
+    //sum of given l1,l2 r1,r2:-
     public static int sum(int [][]a,int r1,int c1,int r2,int c2){
         int sum=0;
 
@@ -24,5 +62,15 @@ public class Lecture_27_Prefix_Sum_2DArray_ {
         }
 
         return sum;
+    }
+
+    public static void print(int a[][]){
+        // System.out.println("Printing array :-");
+        for(int i=0;i<a.length;i++){
+            for(int j=0;j<a[i].length;j++){
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
 }
