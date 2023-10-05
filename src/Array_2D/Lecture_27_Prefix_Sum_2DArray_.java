@@ -14,9 +14,14 @@ public class Lecture_27_Prefix_Sum_2DArray_ {
 
         print(a);
 
-       // System.out.println(sum(a,3,1,5,4));
+        //method 1:-{Broot force}
+        System.out.println(sum(a,3,1,5,4));
 
-        System.out.println( "Sum of scope variables :-  "+preSumScope(a,01,2,1,2));
+        //Method 2:-
+        //only 1 itteration used:-
+       System.out.println( "Sum of scope variables :-  "+preSumScope(a,0,2,0,2));
+
+        System.out.println( "Sum of scope variables :-  "+pre_2(a,0,2,0,2));
     }
 
     //prefix Sum inplace:-
@@ -42,6 +47,49 @@ public class Lecture_27_Prefix_Sum_2DArray_ {
             else{
                 sum+=a[i][r2];
              }
+        }
+
+
+        return sum;
+    }
+
+
+    //prefix sum over collumn;-
+    public static void pre_Sum_On_Collumn(int[][]a){
+        int r=a.length;
+        int c=a[0].length;
+
+        //traversing over collumn just put  the loop of j outside:-
+        for(int j=0;j<c;j++){
+            for(int i=1;i<r;i++){
+                a[i][j] += a[i-1][j];
+            }
+        }
+
+    }
+
+    //Prefix_Sum over collumn and row:-
+    public static int pre_2(int a[][],int l1,int l2,int r1,int r2){
+        int sum=0;
+        //finding prefix sum of every individual array:-
+        for(int i=0;i<a.length;i++){
+            pre_sum(a[i]);
+        }
+        System.out.println("prefix sum over row:-");
+        print(a);
+
+
+        //Prefix sum over collumn:-
+        System.out.println("Prefix sum over collumn:-");
+        pre_Sum_On_Collumn(a);
+          print(a);
+
+          //sum:-
+        if(r1 >0 && l1 > 0) {
+            sum = a[l2][r2] - a[l1 - 1][r2] - a[l2][r1 - 1] + a[l1 - 1][r1 - 1];
+        }
+        else {
+            sum = a[l2][r2] - a[l1][r2] - a[l2][r1] + a[l1][r1];
         }
 
 
