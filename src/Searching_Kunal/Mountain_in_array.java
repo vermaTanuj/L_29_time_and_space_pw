@@ -21,7 +21,7 @@ public class Mountain_in_array {
                 //you are present in desending part:-
                 end = mid;
             } else {
-                //   a[mid]>a[mid+1]
+                //   a[mid]<a[mid+1]
                 //you are present in assending part:-
                 st = mid +1;
             }
