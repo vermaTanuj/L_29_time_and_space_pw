@@ -12,7 +12,7 @@ public class Lec_50__Rotated_Sorted_Array {
         System.out.println(find_Target(c,t));
 
         int []d={0,0,0,1,1,1,2,0,0};
-        System.out.println(find_Target(d,1));
+        System.out.println("lll"+find_Target(d,2));
 
         int e[]={1,1,1,1,1,1,2,3,1,1};
         System.out.println(find_Target(e,2));
