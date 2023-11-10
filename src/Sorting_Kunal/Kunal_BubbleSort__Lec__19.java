@@ -34,6 +34,7 @@ public class Kunal_BubbleSort__Lec__19 {
     public static void bubbleSort_Kunal(int a[]){
 
         for(int i=0;i<a.length;i++){   // running to n-1 terms
+            boolean b=false;
           for(int j=1;j< a.length-i;j++){  //for each step maximum item will come at end
               //Swaping the term if it is sess then its previous one:-
               if(a[j]<a[j-1]){
@@ -41,8 +42,12 @@ public class Kunal_BubbleSort__Lec__19 {
                   int t=a[j];
                   a[j]=a[j-1];
                   a[j-1]=t;
-
+                  b=true;
               }
+          }
+          if(b==false){
+              System.out.println("hhhf");
+              return;
           }
         }
     }
