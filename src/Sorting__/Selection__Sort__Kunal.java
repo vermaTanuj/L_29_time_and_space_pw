@@ -1,7 +1,7 @@
 package Sorting__;
 
 import java.util.Arrays;
-public class Insertion__Sort__Kunal {
+public class Selection__Sort__Kunal {
     public static void main(String[] args) {
         int a[]={5,4,3,2,1};
         insertionSort(a);

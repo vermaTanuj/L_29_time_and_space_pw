@@ -8,6 +8,10 @@ public class experiment {
         int [][]a={{1,2,3},{3,2,9}};
         System.out.println(ddd(a));
 
+        int b[]={3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5};
+        one g=new one();
+        g.b_sort(b);
+        System.out.println(Arrays.toString(b));
 
     }
     //count the no of digits:-
@@ -54,5 +58,41 @@ return max;
         for(int i=1;i<a.length;i++){
             a[i]=a[i]+a[i-1];
         }
+    }
+
+
+    //Bubble sort:-
+
+
+}
+
+class one{
+    public void b_sort(int a[]){
+        for(int i=0;i<a.length;i++){
+            for(int j=1;j<a.length-i;j++){
+                if(a[j]<a[j-1]){
+                    //Swap;-
+                    int t=a[j];
+                    a[j]=a[j-1];
+                    a[j-1]=t;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
