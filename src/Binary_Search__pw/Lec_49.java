@@ -7,7 +7,7 @@ public class Lec_49 {
 
         System.out.println(bsRecurtion(a,8,0,a.length-1));
         System.out.println(bs(b,5));
-        System.out.println(square_root(25));
+        System.out.println(square_root(12));
     }
 
     //Binary Search Recursive Aprosch:-

@@ -1,4 +1,4 @@
-package Sorting__;
+package Sorting__Kunal;
 
 import java.util.Arrays;
 public class Selection__Sort__Kunal {

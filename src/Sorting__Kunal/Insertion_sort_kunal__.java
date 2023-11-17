@@ -1,4 +1,4 @@
-package Sorting__;
+package Sorting__Kunal;
 import java.util.Arrays;
 
 public class Insertion_sort_kunal__ {

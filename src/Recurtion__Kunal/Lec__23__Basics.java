@@ -6,7 +6,7 @@ public class Lec__23__Basics {
         //Make a function that prints 1 to 10:=
        // print_1(1);
        // for(int i=1;i<10;i++) {
-           System.out.println(fibonachi_No(45));
+          // System.out.println(fibonachi_No(45));
        // }
  //printNos(10);
 
@@ -16,6 +16,11 @@ public class Lec__23__Basics {
         System.out.println(bs(a,9,0,a.length-1));
 
          */
+
+        for(int i=0;i<50;i++){
+            String h=Integer.toString(fibo_formula(i));
+            System.out.print( h+" ");
+        }
 
     }
     public static void print_1(int a){
@@ -70,5 +75,12 @@ public class Lec__23__Basics {
         }
         return -1;
     }
+
+    //Fibonachi no formula:-
+    public static int fibo_formula(int n){
+        return (int) ((Math.pow(((1+Math.sqrt(5))/2),n) - Math.pow(((1-Math.sqrt(5))/2),n))/Math.sqrt(5));
+    }
+
+ 
    
 }
