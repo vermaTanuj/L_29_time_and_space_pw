@@ -9,6 +9,24 @@ public class Classes__Objects__Constructors__Keywords {
         System.out.println(tanuj.roll);
         System.out.println(tanuj.marks);
 
+        // Create a Student object using the regular constructor
+        Student a = new Student("John", 1, 90.5f);
+
+        // Create a new Student object using the copy constructor
+        Student copiedStudent = new Student(a);
+
+        // Display the values of the original and copied students
+        System.out.println("Original Student: " + a.name + ", " +a.roll + ", " + a.marks);
+        System.out.println("Copied Student: " + copiedStudent.name + ", " + copiedStudent.roll + ", " + copiedStudent.marks);
+
+        //Finalized method:-
+
+        Student obj;
+        for(int i=0;i<1000000000;i++){
+            obj=new Student(i);
+        }
+
+
     }
 }
 
@@ -26,5 +44,23 @@ class Student{
         this.name=name;
         this.roll=roll;
         this.marks=marks;
+    }
+    // Copy constructor to create a new object by copying values from another object
+    Student(Student other) {
+        this.name = other.name;
+        this.roll = other.roll;
+        this.marks = other.marks;
+    }
+
+    Student(int i){
+        System.out.println( "no of times:- "+i);
+    }
+    //finalised:-
+//  it tells the compiler to do what you want to do if obj is distroyed;
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        System.out.println("Obj distroyed");
     }
 }

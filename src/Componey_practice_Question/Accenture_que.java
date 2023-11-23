@@ -7,8 +7,13 @@ public class Accenture_que {
     public static void main(String[] args) {
         //Convert the capital to small:-
         String s="ABCDabcd123**";
-        System.out.println(converter(s));
+       // System.out.println(converter(s));
 
+        System.out.println((int)'a');
+        System.out.println((int)'z');
+        System.out.println((int)'A');
+        System.out.println((int)'Z');
+        System.out.println(by_Algoritthem(s));
     }
     public static String converter(String s){
         char [] ch= s.toCharArray();//new char[s.length()];
@@ -23,5 +28,27 @@ public class Accenture_que {
             }
         }
         return String.valueOf(ch);
+    }
+
+    public static String by_Algoritthem(String s){
+
+        char[] c=s.toCharArray();
+        int i=0;
+        while(i< c.length){
+            if((int)c[i]>=65 && (int)c[i]<=90){
+                char ch= (char) ((int)c[i]+32);
+                c[i]=ch;
+                i++;
+            }
+            else if((int)c[i]>=97 && (int)c[i]<=122){
+                char ch= (char) ((int)c[i]-32);
+                c[i]=ch;
+                i++;
+            }
+            else {
+                i++; // Increment i if the character is neither uppercase nor lowercase
+            }
+        }
+return String.valueOf(c);
     }
 }
