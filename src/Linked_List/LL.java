@@ -22,6 +22,16 @@ public class LL {
         size=size+1;                    // increase the size
     }
 
+    //Displaying the linked list:-
+    public void display(){
+        Node temp=head;  //:- temp variable is used to reduce the risk of modifying ll ;insted of head;
+        while(temp != null){
+            System.out.print(temp.value+" -> ");
+            temp=temp.next;
+        }
+        System.out.println("End");
+    }
+
 
 
 
