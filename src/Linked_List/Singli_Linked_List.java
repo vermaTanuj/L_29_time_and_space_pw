@@ -1,13 +1,13 @@
 package Linked_List;
 
-public class LL {
+public class Singli_Linked_List {
 //Singly Linked List:-
 
     private Node head;
     private Node tail;
     private int size;
 
-    public LL(){
+    public Singli_Linked_List(){
         this.size=0;
     }
     //Inserting at first into linklist:-(method)

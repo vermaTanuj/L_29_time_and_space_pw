@@ -1,7 +1,5 @@
 package Linked_List;
 
-import org.w3c.dom.Node;
-
 import java.util.LinkedList;
 
 public class Main {
@@ -13,7 +11,7 @@ public class Main {
         System.out.println(a.size());
 
 
-        LL list=new LL();
+        Singli_Linked_List list=new Singli_Linked_List();
         //adding value;
         list.insertFirst(1);
         list.insertFirst(2);
@@ -44,17 +42,26 @@ public class Main {
 
 
         //deleting a list having one element:-
-        LL k=new LL();
+        Singli_Linked_List k=new Singli_Linked_List();
      k.insertFirst(4);
      k.display();
      k.deleteFirst();
      k.display();
 
      // //deleting a list having 0 element:-
-     LL o=new LL();
+     Singli_Linked_List o=new Singli_Linked_List();
      o.display();
+///////////////////////////////// -: Doubly Linked List:- ///////////////////////////////////
 
-
+        Doubli_Linked_List d=new Doubli_Linked_List();
+        System.out.println("Duubli Linked List:-");
+        d.insertFirst(5);
+        d.insertFirst(4);
+        d.insertFirst(3);
+        d.insertFirst(2);
+        d.insertFirst(1);
+        d.displayForword();
+       d.displayback();
 
     }
 }
