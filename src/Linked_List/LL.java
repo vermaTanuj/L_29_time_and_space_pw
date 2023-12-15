@@ -59,20 +59,20 @@ public class LL {
     }
 
     public void insertAtIndex(int value,int index){
-        if(index==0){
+        if(index==0){   //insert at first index
             insertFirst(value);
             return;
         }
-        if(index==size){
+        if(index==size){           ////insert at Last index
             insertLast(value);
         }
         //insert into middle:-
-        Node temp=head;
-        for(int i=1;i<index;i++){
-            temp=temp.next;
+        Node temp=head;                         //temperory variable
+        for(int i=1;i<index;i++){             //bringing temp to (index-1) asress
+            temp=temp.next;                   //assigining address
         }
-        Node node=new Node(value,temp.next);
-        temp.next=node;
+        Node node=new Node(value,temp.next); //new node  ;;temp.next:- giving the address of next node
+        temp.next=node;                      //Assigining address of newly created node to  (index-1) node
         size++;
     }
 
