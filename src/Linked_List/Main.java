@@ -1,9 +1,11 @@
 package Linked_List;
 
+import org.w3c.dom.Node;
+
 import java.util.LinkedList;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
 //Inbuilt:-
         LinkedList <Integer>a=new LinkedList();
@@ -26,9 +28,31 @@ public class Main {
         list.insertFirst(66);
         list.display();
 
-list.insertAtIndex(888,3);
-list.display();
+       list.insertAtIndex(888,3);
+       list.display();
+        list.deleteFirst();
+        list.display();
 
+        System.out.println("getSize():- "+list.getSize());
+        list.deleteLast();
+        list.display();
+        System.out.println();
+        list.deleteAtIndex(3);
+        list.display();
+
+        System.out.println();
+
+
+        //deleting a list having one element:-
+        LL k=new LL();
+     k.insertFirst(4);
+     k.display();
+     k.deleteFirst();
+     k.display();
+
+     // //deleting a list having 0 element:-
+     LL o=new LL();
+     o.display();
 
 
 

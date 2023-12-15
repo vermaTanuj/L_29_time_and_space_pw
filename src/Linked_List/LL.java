@@ -76,6 +76,91 @@ public class LL {
         size++;
     }
 
+    //Delete first:-
+    public void deleteFirst(){
+        if(head==null && tail==null){     //Empty linkList:-
+            return;
+        }
+        if(head==tail){          // linklist with 1 element:-
+            head=null;
+            tail=null;
+            return;
+        }
+        //Delete in normal:-
+        head=head.next;         //in deleting we just  point head to  nest
+                                //rest part is deleted by garbej collection
+        size--;                 //decreasing size
+    }
+
+    public int getSize(){
+        return size;
+    }
+
+    //Deleting the last element:-
+    public void deleteLast(){
+        if(head==null && tail==null){  //empty list
+            return;
+        }
+        if(head==tail){ // 1 element list
+            head=null;
+            tail=null;
+        }
+        //normal list:-
+        int size=getSize();    //getSize():-returns the size
+        Node temp=head;        //temperory node
+        for(int i=1; i< size-1 ;i++){    //size-1 :- brings temp to second last index
+            temp=temp.next;             //bringing to second_last adress
+        }
+        tail=temp.next;            //tail to second last element
+        temp.next=null;            //second last element to null
+        size--;
+    }
+
+    //Delete at index:-
+    public void deleteAtIndex(int index) throws Exception {
+        if(index==0){
+            deleteFirst();
+            return;
+        }
+        if(index==size-1){
+            deleteLast();
+            return;
+        }
+        //Empty list:-
+        if(head==null&&tail==null){
+            return;
+        }
+        //1 element:-
+        if(head==tail){
+            deleteFirst();
+        }
+        if(index>size-1 || index<0){   //Throwing exception in case:-
+            throw new Exception("index out of bound: xxx");
+        }
+
+        //Normal case:-
+        Node temp=head;
+        for(int i=1;i<index;i++){
+            temp=temp.next;            //temp contain the address of the node to be deleted
+        }
+
+        temp.next=temp.next.next;     //reassigning the address by skipping 1 in between
+        size--;
+
+    }
+
+    //finde Value in node;-
+    public Node findValue(int value){
+        Node temp=head;
+       while (temp!=null){
+           if(temp.value==value){
+               return temp;
+           }
+           temp=temp.next;
+       }
+       return null;
+    }
+
 
 
 
