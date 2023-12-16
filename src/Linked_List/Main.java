@@ -60,8 +60,15 @@ public class Main {
         d.insertFirst(3);
         d.insertFirst(2);
         d.insertFirst(1);
+
+        d.insertLast(100);
+        d.insertAtLast(200);
         d.displayForword();
        d.displayback();
+       d.displayForword();
+       d.insertAtIndex(5009,0);
+       d.displayForword();
+
 
     }
 }

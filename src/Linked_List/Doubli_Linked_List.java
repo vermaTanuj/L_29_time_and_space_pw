@@ -5,6 +5,9 @@ public class Doubli_Linked_List {
   private    Node head;
   private    Node tail;
     private int size;
+    public int getSize(){
+        return size;
+    }
     public Doubli_Linked_List(){
         this.size=0;
     }
@@ -26,6 +29,67 @@ public class Doubli_Linked_List {
         }
 
         //update head
+        size++;
+    }
+
+    //Insert at Last:-
+    public void insertLast(int value){
+        Node node=new Node(value) ;
+        node.prev=tail;
+        node.next=null;
+        if(tail!=null){
+            tail.next=node;
+            tail=node;
+        }
+        else{
+            head=node;
+            tail=node;
+        }
+
+    }
+
+    //insert last without tail:-
+    public void insertAtLast(int v){
+      //empty list
+        if(head==null){
+            insertFirst(v);
+        }
+        //Normal case:-
+        Node node=new Node(v);
+        Node temp=head;
+        while (temp!=null){
+            temp=tail.next;
+            if(temp==null){
+                node.prev=temp;
+                node.next=null;
+                tail.next=node;
+            }
+        }size++;
+    }
+
+    public void insertAtIndex(int value,int index)throws Exception{
+        if(index==0){
+            insertFirst(value);
+            return;
+        }
+        if(index==size){
+          insertLast(value);
+          return;
+        }
+        if(index<0 || index>size){
+            throw new Exception("[Index out of bound by Tanuj Verma] ");
+        }
+        //Normal case:=-
+
+       Node node=new Node(value);
+        Node temp=head;
+        for(int i=1;i<index;i++){
+            temp=temp.next;
+        }
+        node.next=temp.next;
+        node.prev=temp;
+        temp.next=node;
+        node.next.prev=node;
         size++;
     }
 
