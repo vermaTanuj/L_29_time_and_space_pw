@@ -1,5 +1,8 @@
 package Linked_List;
 
+
+
+import java.sql.SQLOutput;
 import java.util.LinkedList;
 
 public class Main {
@@ -66,9 +69,32 @@ public class Main {
         d.displayForword();
        d.displayback();
        d.displayForword();
-       d.insertAtIndex(5009,0);
+        System.out.println("yyy");
+       d.insertAtIndex(5009,4);
        d.displayForword();
+d.displayback();
 
+////Circular linked list????
+        System.out.println("/Circular linked list?");
+        Circular_Linked_List c=new Circular_Linked_List();
+
+        c.insertAfterTail(1);
+        c.insertAfterTail(2);
+        c.insertAfterTail(3);
+        c.insertAfterTail(4);
+        c.insertAfterTail(5);
+        c.insertAfterTail(6);
+        c.insertAfterTail(7);
+        c.insertAfterTail(8);
+        System.out.println("kkk");
+        c.display();
+        System.out.println("kkk");
+        c.delete(4);
+        c.Delete(4);
+        c.deletee(3);
+        System.out.println("kkk");
+        c.display();
+        System.out.println("kkk");
 
     }
 }
