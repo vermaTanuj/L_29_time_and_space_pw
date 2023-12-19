@@ -76,6 +76,21 @@ public class Singli_Linked_List {
         size++;
     }
 
+    //Insert At Index Using recurtion:-
+     /* 1.> Tail is not given;
+        2.> Size is not given;
+      */
+    Node temp=head;
+    public void insertAtIndexRecurtion(int value,int index){
+        if(index==0){
+            Node node=new Node(value);
+            node.next=temp.next;
+            temp.next=node;
+        }
+        temp=temp.next;
+         insertAtIndexRecurtion(value,index-1);
+    }
+
     //Delete first:-
     public void deleteFirst(){
         if(head==null && tail==null){     //Empty linkList:-
