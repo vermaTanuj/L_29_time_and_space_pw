@@ -64,13 +64,91 @@ if(a!=null){
 }
 
 
+// Que:-141 { //  Cycle detection  \\}
+
+ public boolean hasCycle(ListNode a) {
+
+  if(a==null){
+  return false;  //empty list no cycle
+  }
+
+       ListNode s=a;     slow pointer
+       ListNode f=a;     fast pointer
 
 
+       while(f!=null &&f.next!=null){
+        s=s.next;                  //Update fast and slow pointer in their own term
+        f=f.next.next;
+        if(s==f){
+            return true;
+        }
+    }
+
+       return false;
+}
+}
+
+///////////////  Count no of nodes in cycle:-
+
+ public int countNoOfNodesInCycle(ListNode a) {
+
+  if(a==null){
+  return 0;  //empty list no cycle
+  }
+
+       ListNode s=a;     slow pointer
+       ListNode f=a;     fast pointer
 
 
+       while(f!=null &&f.next!=null){
+        s=s.next;                  //Update fast and slow pointer in their own term
+        f=f.next.next;
+        if(s==f){
+           // Cycle detected : Find length:-
 
+           Node temp=slow;
+           int length=0;
+           do{
+           temp=temp.next;
+           length++;
+           }
+           while(temp != slow);
+           return length;
+        }
+    }
 
+       return 0;
+}
+}
+Que:- 142 {/// return 1'st node where the cycle starts;   \\\}
+  public ListNode detectCycle(ListNode head) {
 
+        if(head==null ){
+            return null;
+        }
+
+        ListNode fast=head;
+        ListNode slow=head;
+
+        while(fast!=null && fast.next !=null){
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow){
+
+           //Cucle detected:-
+
+           fast=head;
+
+           while(fast!=slow){
+               fast=fast.next;
+               slow=slow.next;
+           }
+           return fast;
+            }
+        }
+        //No cycle:-
+        return null;
+    }
 
 
  */
