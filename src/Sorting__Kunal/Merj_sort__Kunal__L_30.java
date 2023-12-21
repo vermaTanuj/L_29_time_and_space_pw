@@ -5,15 +5,15 @@ public class Merj_sort__Kunal__L_30 {
     public static void main(String[] args) {
 
         int a[]={9,8,7,6,5,2,3,2,1};
-       int ans[]= merjSort(a);
+      int ans[]= merjSort(a);
         System.out.println(Arrays.toString(ans));
 
     }
     //Merj Sort:-
-    public static int [] merjSort(int a[]){
+    public static int[] merjSort(int a[]){
         if(a.length==1  || a.length==0){
             return a;
-        }
+       }
         int mid= a.length/2;
 
         int first[]=merjSort(Arrays.copyOfRange(a,0,mid));  // mid is excluded;
