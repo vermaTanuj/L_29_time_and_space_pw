@@ -1,7 +1,7 @@
 package Linked_List;
 
 import org.w3c.dom.Node;
-
+/*
 public class Questions_Leetcode {
 
 /*
@@ -27,7 +27,7 @@ Que;-  83>  Given the head of a sorted linked list, delete all duplicates such t
 
         }
     }
-
+////////////////////////////////////////////////////////////////////////////////
     Que 21 > Merge 2 Link List:-
 
 
@@ -63,7 +63,7 @@ if(a!=null){
     }
 }
 
-
+///////////////////////////////////////////////////////////////////
 // Que:-141 { //  Cycle detection  \\}
 
  public boolean hasCycle(ListNode a) {
@@ -87,7 +87,7 @@ if(a!=null){
        return false;
 }
 }
-
+//////////////////////////////////////////////////////////////////////////////////
 ///////////////  Count no of nodes in cycle:-
 
  public int countNoOfNodesInCycle(ListNode a) {
@@ -120,6 +120,7 @@ if(a!=null){
        return 0;
 }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////
 Que:- 142 {/// return 1'st node where the cycle starts;   \\\}
   public ListNode detectCycle(ListNode head) {
 
@@ -151,6 +152,25 @@ Que:- 142 {/// return 1'st node where the cycle starts;   \\\}
     }
 
 
+
+
+    ////////////////876////////////////
+    //////  /Middle of link list ////////////////
+
+    //2pointer aproch":-
+
+    public Node middle(Node head){
+
+    Node f=head;
+    Node s=head;
+
+
+    while(f != null  && f.next!=null){
+    f=f.next.next;
+     s=s.next;
+           }
+
+           retirn s;  /s:- middle in even node no s== mid+1;
+           }
  */
 
-}
