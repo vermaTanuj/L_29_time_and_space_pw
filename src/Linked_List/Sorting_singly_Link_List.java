@@ -77,6 +77,8 @@ private Node head;
     }
 
     //////////////////////////////////////////////////
+
+    //Merj sort :- Link list;;
     public static Node marge(Node a, Node b){
         // Base cases
         if (a == null)
