@@ -21,8 +21,10 @@ public class Main {
         list.insertFirst(3);
         list.insertFirst(4);
         list.insertFirst(5);
-        list.insertAtIndexRecurtion(600,4);
+      //  list.insertAtIndexRecurtion(600,4);
         //displaying value;
+        list.display();
+        list.reverseList();
         list.display();
 
         //inert at last;-
@@ -96,6 +98,5 @@ d.displayback();
         System.out.println("kkk");
         c.display();
         System.out.println("kkk");
-
     }
 }

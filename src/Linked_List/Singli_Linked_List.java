@@ -176,7 +176,27 @@ public class Singli_Linked_List {
        return null;
     }
 
+    //Reverse Link List:-
+    public  Node  reverseList(){
+        //Edge case:-
+        if(head==null||head.next==null){
+            return head;
+        }
+        Node previous=null;
+        Node present=head;
+        Node next=head.next;
 
+        while (present!=null) {
+            present.next = previous;
+            previous = present;
+            present = next;
+            if (next!= null){
+                next = next.next;
+            }
+        }
+        head=previous;
+         return previous;
+    }
 
 
     //Node Class :-
